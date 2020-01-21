@@ -1,5 +1,6 @@
 from Utilities.config import db
 from passlib.apps import custom_app_context as pwd_context
+
 class User(db.Model):
     __tablename__ = 'users'
     User_Id = db.Column(db.Integer, primary_key = True)
@@ -34,7 +35,6 @@ def addUser(data):
 def verifyLogin(data):
     username = data['username']
     password = data['password']
-    print("username:" +  username + password)
     if username is "" or password is None:
         return "Username or password is missing" # missing arguments
     if User.query.filter_by(username = username).first() is not None:
@@ -45,4 +45,4 @@ def verifyLogin(data):
         else:
             return "Wrong Password"
     else:
-        return "user not found"
+        return "User Not Found"
