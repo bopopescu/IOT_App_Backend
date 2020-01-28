@@ -14,7 +14,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:karizma5181@iotapplicatio
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)'''
 
-import pandas as pd
+'''import pandas as pd
 import pymysql
 
 host="iotapplication.cdmmnd2zokfr.us-east-2.rds.amazonaws.com"
@@ -24,4 +24,9 @@ user="admin"
 password="karizma5181"
 
 conn = pymysql.connect(host, user=user,port=port,
-                           passwd=password, db=dbname)
+                           passwd=password, db=dbname)'''
+
+
+from datetime import datetime
+a=datetime.now()
+print(a)
